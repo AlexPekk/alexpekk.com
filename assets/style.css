@@ -47,6 +47,7 @@ a:hover{text-decoration:underline}
 .hero h1{font-size:44px;line-height:1.15;margin:0 0 18px;letter-spacing:-.02em}
 .hero p.lead{font-size:19px;color:var(--ink-soft);margin:0}
 .eyebrow{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:14px;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:20px}
+.hero-photo{width:100%;height:auto;border-radius:var(--radius);object-fit:cover;aspect-ratio:4/5}
 .photo-ph{aspect-ratio:4/5;background:var(--sand);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:#a79f8e;font-size:15px;text-align:center;padding:20px}
 
 /* facts */
