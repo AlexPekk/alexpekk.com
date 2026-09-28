@@ -8,25 +8,24 @@
 <link rel="canonical" href="https://alexpekk.com/rayony/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;800&family=Spectral:wght@400;600&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=2">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=3">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 </head>
-<body>
+<body class="light">
 
 <header class="top">
   <div class="wrap top-in">
-    <a class="logo" href="/">Александр <span>Пеккер</span></a>
+    <a class="logo" href="/">Александр Пеккер</a>
     <button class="burger" aria-label="Меню">Меню</button>
     <nav class="nav">
-      <a href="/podbor/">Подбор квартиры</a>
-      <a href="/rayony/" aria-current="page">Районы Батуми</a>
-      <a href="/vnzh/">ВНЖ Грузии</a>
+      <a href="/podbor/">Подбор</a>
+      <a href="/rayony/" aria-current="page">Районы</a>
+      <a href="/vnzh/">ВНЖ</a>
       <a href="/nalogi/">Налоги</a>
       <a href="/pereezd/">Переезд</a>
     </nav>
-    <a class="btn" href="/podbor/#anketa">Подобрать квартиру</a>
-  </div>
+    </div>
 </header>
 
 <div class="wrap article">
@@ -81,35 +80,35 @@
     <p>Проверить, что строится рядом с конкретным домом, можно только на месте или по кадастру. Я это делаю до сделки, потому что в Батуми площадка через дорогу продаётся быстрее, чем достраивается ваш дом.</p>
   </div>
 
-  <div class="band" style="margin-top:44px">
+  <div class="band" style="margin-top:56px">
     <h2>Не знаете, какой район ваш?</h2>
     <p>Скажите бюджет и для чего покупаете - подберу районы и конкретные дома под задачу, с ценами и сроками сдачи.</p>
-    <a class="btn" href="/podbor/#anketa">Заполнить анкету</a>
+    <a class="btn btn-light" href="/podbor/#anketa">Заполнить анкету</a>
   </div>
 </div>
 
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <div class="logo">Александр <span>Пеккер</span></div>
+      <span class="logo">Александр Пеккер</span>
       <p>Брокер по новостройкам Батуми. Живу в Грузии, работаю с покупателями из России, Европы, Израиля и США.</p>
     </div>
     <div>
       <b>Разделы</b>
-      <div class="soc" style="flex-direction:column;gap:8px">
-        <a href="/podbor/">Подбор квартиры</a>
+      <div class="soc">
+        <a href="/podbor/">Подбор</a>
         <a href="/rayony/">Районы Батуми</a>
-        <a href="/vnzh/">ВНЖ Грузии</a>
+        <a href="/vnzh/">ВНЖ</a>
         <a href="/nalogi/">Налоги</a>
         <a href="/pereezd/">Переезд</a>
       </div>
     </div>
     <div>
       <b>Связь</b>
-      <div class="soc" style="flex-direction:column;gap:8px">
+      <div class="soc">
         <a href="#" data-link="telegram">Telegram</a>
         <a href="#" data-link="youtube">YouTube</a>
-        <a href="#" data-link="instagram">Instagram</a>
+        <a href="https://www.instagram.com/alexpekk/" rel="noopener">Instagram</a>
       </div>
     </div>
   </div>
@@ -120,6 +119,7 @@ document.querySelector('.burger').addEventListener('click',function(){
   document.querySelector('.nav').classList.toggle('open');
 });
 (function(){
+  var topbar=document.querySelector('.top');
   var sel='section, .article > h2, .article > .steps, .article > .callout, .article > table, .article > .faq, .article > .form-box';
   var items=[].slice.call(document.querySelectorAll(sel));
   var fold=window.innerHeight*0.95;
