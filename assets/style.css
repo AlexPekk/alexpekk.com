@@ -174,3 +174,47 @@ footer b{display:block;color:var(--ink);font-size:14px;letter-spacing:.08em;text
   .band{padding:30px 24px}
   .step{grid-template-columns:52px 1fr;gap:14px}
 }
+
+/* ——— первый экран во всю ширину ——— */
+.stage{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;
+  background:#0d1114 center/cover no-repeat;color:#fff;overflow:hidden}
+.stage::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,17,20,.62) 0%,rgba(13,17,20,.25) 38%,rgba(13,17,20,.86) 100%)}
+.stage .wrap{position:relative;z-index:2;width:100%;padding-block:56px 44px}
+.stage h1{font-size:clamp(32px,5vw,60px);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin:0 0 18px;max-width:16ch;text-wrap:balance}
+.stage .lead{font-family:var(--text);font-size:clamp(17px,1.5vw,20px);color:#d7dcdf;max-width:46ch;margin:0}
+.stage .eyebrow{color:#fff;opacity:.9}
+.stage .eyebrow::before{background:var(--accent)}
+.stage .btn-row{margin-top:26px}
+.stage .btn-ghost{color:#fff;border-color:rgba(255,255,255,.6)}
+.stage .btn-ghost:hover{background:#fff;color:var(--ink)}
+.stage-strip{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.16);display:grid;grid-template-columns:repeat(4,1fr)}
+.stage-strip div{padding:16px 20px;border-right:1px solid rgba(255,255,255,.16)}
+.stage-strip div:last-child{border-right:0}
+.stage-strip b{display:block;font-size:22px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stage-strip span{font-size:13px;color:#c3cace}
+
+/* ——— витрина объектов ——— */
+.lots{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.lot{background:var(--surface);padding:22px 22px 20px;display:flex;flex-direction:column;gap:6px;transition:background .2s ease}
+.lot:hover{background:var(--accent-soft)}
+.lot .name{font-weight:600;font-size:18px;letter-spacing:-.01em}
+.lot .area{font-size:14px;color:var(--ink-2);text-transform:uppercase;letter-spacing:.08em}
+.lot .price{font-size:26px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums;margin-top:6px}
+.lot .price small{font-size:14px;font-weight:500;color:var(--ink-2)}
+.lot .terms{font-size:15px;color:var(--ink-2);font-family:var(--text);margin-top:2px}
+.lots-note{font-size:14px;color:var(--ink-2);margin-top:14px}
+
+/* ——— блок «обо мне» ——— */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line)}
+.about p{font-family:var(--text);font-size:18px;color:#22282b;margin:0 0 16px}
+
+section{padding-block:60px}
+.hero{display:none}
+@media(max-width:900px){
+  .stage-strip{grid-template-columns:1fr 1fr}
+  .stage-strip div:nth-child(2){border-right:0}
+  .lots{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr;gap:26px}
+}
