@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="stylesheet" href="/assets/style.css?v=9">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 </head>
 <body class="light">
@@ -122,6 +122,25 @@ document.querySelector('.burger').addEventListener('click',function(){
   },{rootMargin:'0px 0px -6% 0px',threshold:.04});
   below.forEach(function(el){el.classList.add('rise');io.observe(el);});
   setTimeout(function(){below.forEach(function(el){el.classList.add('seen')});},2500);
+})();
+
+(function(){
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var items=[].slice.call(document.querySelectorAll('.lot, .cards .card, .step, .numbers .cell'));
+  var fold=window.innerHeight*0.95;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var group=[].slice.call(e.target.parentNode.children).indexOf(e.target);
+      e.target.style.transitionDelay=Math.min(group,5)*70+'ms';
+      e.target.classList.add('seen'); io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -5% 0px',threshold:.05});
+  items.forEach(function(el){
+    if(el.getBoundingClientRect().top<fold){el.classList.add('reveal-item','seen');return;}
+    el.classList.add('reveal-item'); io.observe(el);
+  });
+  setTimeout(function(){items.forEach(function(el){el.classList.add('seen')});},3000);
 })();
 </script>
 </body>
