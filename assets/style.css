@@ -207,8 +207,3 @@ footer a:hover::after,.nav a:hover::after{right:0}
   .btn:hover,.card:hover,.lot:hover{transform:none}
   .about figure:hover img{transform:none}
 }
-
-/* появление карточек по очереди */
-.reveal-item{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
-.reveal-item.seen{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.reveal-item{opacity:1;transform:none;transition:none}}
