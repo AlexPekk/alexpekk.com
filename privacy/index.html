@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Политика обработки персональных данных</title>
+<meta name="description" content="Как обрабатываются данные, которые вы оставляете в анкете на сайте alexpekk.com.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://alexpekk.com/privacy/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="light">
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="/">Александр Пеккер</a>
+    <button class="burger" aria-label="Меню">Меню</button>
+    <nav class="nav">
+      <a href="/podbor/">Подбор</a>
+      <a href="/rayony/">Районы</a>
+      <a href="/vnzh/">ВНЖ</a>
+      <a href="/nalogi/">Налоги</a>
+      <a href="/pereezd/">Переезд</a>
+    </nav>
+    </div>
+</header>
+
+<div class="wrap article">
+  <h1>Политика обработки персональных данных</h1>
+  <p class="meta">Обновлено 28 сентября 2026</p>
+
+  <p>Здесь описано, какие данные собирает сайт alexpekk.com, зачем они нужны и что с ними происходит дальше.</p>
+
+  <h2>Кто обрабатывает данные</h2>
+  <p>Александр Пеккер, частный брокер по недвижимости, Батуми, Грузия. Связь по вопросам о данных - через форму на сайте или в Telegram.</p>
+
+  <h2>Какие данные собираются</h2>
+  <ul>
+    <li>Имя, которое вы указали в анкете</li>
+    <li>Телефон или ник в мессенджере</li>
+    <li>Ответы анкеты: бюджет, формат квартиры, цель покупки, сроки, форма оплаты</li>
+    <li>Комментарий, если вы его оставили</li>
+    <li>Страница сайта, с которой отправлена заявка</li>
+  </ul>
+  <p>Отдельно собирается обезличенная статистика посещений: страна, устройство, источник перехода. По ней нельзя установить конкретного человека.</p>
+
+  <h2>Зачем</h2>
+  <p>Чтобы ответить на заявку, подобрать варианты квартир и вести переписку по вашему запросу. Для других целей данные не используются.</p>
+
+  <h2>Где хранятся</h2>
+  <p>Заявки приходят на почту и в систему учёта заявок. Серверы этих сервисов находятся за пределами России. Отправляя анкету, вы соглашаетесь на такую передачу.</p>
+
+  <h2>Кому передаются</h2>
+  <p>Никому, кроме случаев, когда это нужно для вашей же сделки: например, застройщику - чтобы забронировать квартиру, юристу - чтобы проверить договор. Каждый такой случай согласуется с вами отдельно. Данные не продаются и не используются для рассылок без вашего согласия.</p>
+
+  <h2>Сколько хранятся</h2>
+  <p>Пока идёт работа по вашему запросу и год после последнего контакта. Дальше удаляются.</p>
+
+  <h2>Как отозвать согласие</h2>
+  <p>Напишите в Telegram или ответьте на любое моё сообщение словами «удалите мои данные». Удалю в течение трёх рабочих дней и подтвержу.</p>
+
+  <h2>Файлы cookie</h2>
+  <p>Сайт статический, рекламных и отслеживающих cookie не ставит. Если появится счётчик посещений, здесь будет об этом написано.</p>
+</div>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <span class="logo">Александр Пеккер</span>
+      <p>Брокер по новостройкам Батуми. Живу в Грузии, работаю с покупателями из России, Европы, Израиля и США.</p>
+    </div>
+    <div>
+      <b>Разделы</b>
+      <div class="soc">
+        <a href="/podbor/">Подбор</a>
+        <a href="/rayony/">Районы Батуми</a>
+        <a href="/vnzh/">ВНЖ</a>
+        <a href="/nalogi/">Налоги</a>
+        <a href="/pereezd/">Переезд</a>
+        <a href="/privacy/">Обработка данных</a>
+      </div>
+    </div>
+    <div>
+      <b>Связь</b>
+      <div class="soc">
+        <a href="#" data-link="telegram">Telegram</a>
+        <a href="#" data-link="youtube">YouTube</a>
+        <a href="https://www.instagram.com/alexpekk/" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.burger').addEventListener('click',function(){
+  document.querySelector('.nav').classList.toggle('open');
+});
+(function(){
+  var topbar=document.querySelector('.top');
+  var sel='section, .article > h2, .article > .steps, .article > .callout, .article > table, .article > .faq, .article > .form-box';
+  var items=[].slice.call(document.querySelectorAll(sel));
+  var fold=window.innerHeight*0.95;
+  var below=items.filter(function(el){return el.getBoundingClientRect().top>fold});
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);} });
+  },{rootMargin:'0px 0px -6% 0px',threshold:.04});
+  below.forEach(function(el){el.classList.add('rise');io.observe(el);});
+  setTimeout(function(){below.forEach(function(el){el.classList.add('seen')});},2500);
+})();
+</script>
+</body>
+</html>
