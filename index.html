@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=7">
+<link rel="stylesheet" href="/assets/style.css?v=8">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -79,7 +79,7 @@
 
 <section>
   <div class="wrap about">
-    <img src="/assets/alex-portrait.jpg" alt="Александр Пеккер, брокер по новостройкам Батуми" width="760" height="950" loading="lazy">
+    <figure><img src="/assets/alex-portrait.jpg" alt="Александр Пеккер, брокер по новостройкам Батуми" width="800" height="993" loading="lazy"></figure>
     <div>
       <span class="kicker" style="color:var(--brass)">Обо мне</span>
       <h2 style="margin-top:18px">Почему со мной проще</h2>
@@ -162,6 +162,18 @@ document.querySelector('.burger').addEventListener('click',function(){
   document.querySelector('.nav').classList.toggle('open');
 });
 (function(){
+  var stage=document.querySelector('.stage');
+  if(stage&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches&&window.innerWidth>900){
+    var raf=null;
+    window.addEventListener('scroll',function(){
+      if(raf)return;
+      raf=requestAnimationFrame(function(){
+        var y=Math.min(window.scrollY,700);
+        stage.style.backgroundPosition='center calc(50% + '+(y*0.12)+'px)';
+        raf=null;
+      });
+    },{passive:true});
+  }
   var top=document.querySelector('.top');
   var onScroll=function(){ top.classList.toggle('solid', window.scrollY>60); };
   onScroll(); window.addEventListener('scroll',onScroll,{passive:true});

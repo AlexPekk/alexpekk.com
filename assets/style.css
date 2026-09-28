@@ -183,3 +183,27 @@ footer b{display:block;font-family:var(--ui);color:#fff;font-size:11px;letter-sp
   .article{padding-block:120px 30px}
   .step{grid-template-columns:54px 1fr;gap:16px}
 }
+
+/* ——— лёгкая анимация ——— */
+.top,.btn,.card,.lot,.nav a,.about img,.photo-band,.stage{will-change:auto}
+.btn{transition:background .28s ease,color .28s ease,border-color .28s ease,transform .28s ease}
+.btn:hover{transform:translateY(-2px)}
+.card{position:relative;transition:background .35s ease,transform .35s ease}
+.card:hover{transform:translateY(-3px)}
+.card .more{transition:letter-spacing .3s ease}
+.card:hover .more{letter-spacing:.26em}
+.lot{transition:background .35s ease,transform .35s ease}
+.lot:hover{transform:translateY(-3px)}
+.about figure{margin:0;overflow:hidden}
+.about img{transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
+.about figure:hover img{transform:scale(1.04)}
+.stage-bg{position:absolute;inset:-6% 0 0;background:inherit;background-size:cover;background-position:center;will-change:transform}
+.numbers .cell b{transition:color .3s ease}
+.numbers .cell:hover b{color:var(--brass)}
+footer a,.nav a{position:relative}
+footer a::after,.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1px;background:currentColor;opacity:.6;transition:right .3s ease}
+footer a:hover::after,.nav a:hover::after{right:0}
+@media (prefers-reduced-motion:reduce){
+  .btn:hover,.card:hover,.lot:hover{transform:none}
+  .about figure:hover img{transform:none}
+}
