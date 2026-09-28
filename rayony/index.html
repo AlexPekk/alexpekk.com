@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Manrope:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="/assets/style.css?v=8">
+<link rel="stylesheet" href="/assets/style.css?v=10">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 </head>
 <body class="light">
@@ -131,6 +131,27 @@ document.querySelector('.burger').addEventListener('click',function(){
   },{rootMargin:'0px 0px -6% 0px',threshold:.04});
   below.forEach(function(el){el.classList.add('rise');io.observe(el);});
   setTimeout(function(){below.forEach(function(el){el.classList.add('seen')});},2500);
+})();
+
+(function(){
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var sel='.sec-head, .lots > .lot, .cards > .card, .steps > .step, .numbers .cell, .about img, .about > div > *, .article > h2, .article > p, .article > ul, .article > ol, .article > .callout, .article > table, .article > .faq, .article > .steps, .article > .form-box, .band, .photo-band .wrap > *';
+  var items=[].slice.call(document.querySelectorAll(sel));
+  var fold=window.innerHeight*0.92;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;
+      var sibs=[].slice.call(e.target.parentNode.children);
+      e.target.style.transitionDelay=Math.min(sibs.indexOf(e.target),5)*60+'ms';
+      e.target.classList.add('seen');
+      io.unobserve(e.target);
+    });
+  },{rootMargin:'0px 0px -4% 0px',threshold:.06});
+  items.forEach(function(el){
+    if(el.getBoundingClientRect().top<fold){el.classList.add('reveal','seen');return;}
+    el.classList.add('reveal'); io.observe(el);
+  });
+  setTimeout(function(){items.forEach(function(el){el.classList.add('seen')});},3500);
 })();
 </script>
 </body>
