@@ -220,3 +220,12 @@ section{padding-block:60px}
   .lots{grid-template-columns:1fr}
   .about{grid-template-columns:1fr;gap:26px}
 }
+
+/* ——— широкая фотополоса ——— */
+.photo-band{position:relative;min-height:340px;display:flex;align-items:center;color:#fff;
+  background:#0d1114 center/cover no-repeat}
+.photo-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,13,16,.85),rgba(10,13,16,.3))}
+.photo-band .wrap{position:relative;z-index:2;padding-block:52px}
+.photo-band h2{color:#fff;max-width:18ch}
+.photo-band p{font-family:var(--text);color:#d5dadd;max-width:44ch;font-size:18px;margin:0 0 22px}
+.credit{font-size:13px;color:var(--ink-2);opacity:.75}
