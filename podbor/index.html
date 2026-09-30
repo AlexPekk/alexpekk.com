@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Подбор квартиры в Батуми - как это работает | Александр Пеккер</title>
-<meta name="description" content="Подбор квартиры в новостройке Батуми под задачу: жить, сдавать или перепродать. Покупка удалённо по доверенности. Заполните анкету из шести вопросов.">
+<meta name="description" content="Подбор квартиры в новостройке Батуми под задачу: жить, сдавать или перепродать. Покупка удалённо по доверенности. Оставьте заявку - нужны только имя и телефон.">
 <link rel="canonical" href="https://alexpekk.com/podbor/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Александр Пеккер">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Подбор квартиры в Батуми - как это работает | Александр Пеккер">
-<meta property="og:description" content="Подбор квартиры в новостройке Батуми под задачу: жить, сдавать или перепродать. Покупка удалённо по доверенности. Заполните анкету из шести вопросов.">
+<meta property="og:description" content="Подбор квартиры в новостройке Батуми под задачу: жить, сдавать или перепродать. Покупка удалённо по доверенности. Оставьте заявку - нужны только имя и телефон.">
 <meta property="og:url" content="https://alexpekk.com/podbor/">
 <meta property="og:image" content="https://alexpekk.com/assets/stroyka-3.jpg?v=3">
 <meta name="twitter:card" content="summary_large_image">
@@ -58,7 +58,7 @@
     <li>Честный комментарий по каждому: что не так, кому не подойдёт</li>
     <li>Видео с площадки и из квартиры, если вы не в Грузии</li>
     <li>Проверка застройщика: что сдал раньше, были ли задержки</li>
-    <li>Разбор договора до подписания</li>
+    <li>Согласование правок в договоре до подписания</li>
     <li>Сопровождение сделки, в том числе удалённой</li>
     <li>После сделки: ремонт, мебель, сдача в аренду</li>
   </ul>
@@ -79,7 +79,7 @@
     <div class="step"><div><h3>Бронируем</h3><p>Застройщик снимает квартиру с продажи на срок, которого хватает на оформление.</p></div></div>
     <div class="step"><div><h3>Оформляем доверенность</h3><p>Делается у нотариуса в вашей стране или в консульстве, дальше присылается в Грузию.</p></div></div>
     <div class="step"><div><h3>Оплата и регистрация</h3><p>Деньги идут на счёт застройщика, право собственности регистрируется в Доме юстиции.</p></div></div>
-    <div class="step"><div><h3>Контроль стройки</h3><p>Раз в квартал снимаю ход работ на вашем объекте и держу связь с застройщиком до передачи ключей.</p></div></div>
+    <div class="step"><div><h3>Контроль стройки</h3><p>Держу связь с застройщиком до передачи ключей: слежу за сроками, этапами работ и графиком платежей.</p></div></div>
   </div>
 
 </div>
@@ -91,19 +91,29 @@
 </section>
 
 <div class="wrap article" style="padding-top:0">
-  <h2 id="anketa">Анкета: шесть вопросов</h2>
-  <p>Ответьте коротко - пришлю подборку под вашу задачу. Если по вашим условиям в Батуми ничего нормального нет, я так и скажу.</p>
+  <h2 id="anketa">Анкета</h2>
+  <p>Обязательны только имя и телефон - остальное по желанию, но с ответами подборка будет точнее. Если по вашим условиям в Батуми ничего нормального нет, я так и скажу.</p>
 
   <div class="form-box">
     <form id="lead-form">
       <div class="two">
         <div class="field">
-          <label for="budget">Бюджет</label>
-          <input type="text" id="budget" name="budget" placeholder="например, 70 000 долларов" required>
+          <label for="name">Как вас зовут</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="format">Формат квартиры</label>
-          <select id="format" name="format" required>
+          <label for="phone">Телефон или ник в Telegram</label>
+          <input type="text" id="phone" name="phone" autocomplete="tel" placeholder="+995 ... или @nickname" required>
+        </div>
+      </div>
+      <div class="two">
+        <div class="field">
+          <label for="budget">Бюджет (по желанию)</label>
+          <input type="text" id="budget" name="budget" placeholder="например, 70 000 долларов">
+        </div>
+        <div class="field">
+          <label for="format">Формат квартиры (по желанию)</label>
+          <select id="format" name="format">
             <option value="">Выберите</option>
             <option>Студия</option>
             <option>1 спальня (1+1)</option>
@@ -115,8 +125,8 @@
       </div>
       <div class="two">
         <div class="field">
-          <label for="goal">Для чего покупаете</label>
-          <select id="goal" name="goal" required>
+          <label for="goal">Для чего покупаете (по желанию)</label>
+          <select id="goal" name="goal">
             <option value="">Выберите</option>
             <option>Для себя, жить</option>
             <option>Сдавать в аренду</option>
@@ -125,8 +135,8 @@
           </select>
         </div>
         <div class="field">
-          <label for="term">Когда нужны ключи</label>
-          <select id="term" name="term" required>
+          <label for="keys">Когда нужны ключи (по желанию)</label>
+          <select id="keys" name="keys">
             <option value="">Выберите</option>
             <option>Уже сдан, заехать сразу</option>
             <option>В течение года</option>
@@ -136,8 +146,8 @@
       </div>
       <div class="two">
         <div class="field">
-          <label for="finish">Отделка</label>
-          <select id="finish" name="finish" required>
+          <label for="finish">Отделка (по желанию)</label>
+          <select id="finish" name="finish">
             <option value="">Выберите</option>
             <option>Под ключ, с мебелью</option>
             <option>Белый каркас, ремонт сам</option>
@@ -145,8 +155,8 @@
           </select>
         </div>
         <div class="field">
-          <label for="pay">Оплата</label>
-          <select id="pay" name="pay" required>
+          <label for="payment">Оплата (по желанию)</label>
+          <select id="payment" name="payment">
             <option value="">Выберите</option>
             <option>Всю сумму сразу</option>
             <option>Рассрочка от застройщика</option>
@@ -154,20 +164,11 @@
           </select>
         </div>
       </div>
-      <div class="two">
-        <div class="field">
-          <label for="name">Как вас зовут</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-        <div class="field">
-          <label for="contact">Телефон или ник в Telegram</label>
-          <input type="text" id="contact" name="contact" placeholder="+995 ... или @nickname" required>
-        </div>
-      </div>
       <div class="field">
-        <label for="comment">Что ещё важно (по желанию)</label>
-        <textarea id="comment" name="comment" rows="3" placeholder="вид на море, рядом школа, тихий район"></textarea>
+        <label for="note">Что ещё важно (по желанию)</label>
+        <textarea id="note" name="note" rows="3" placeholder="вид на море, рядом школа, тихий район"></textarea>
       </div>
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div class="field" style="display:flex;gap:12px;align-items:flex-start;margin-bottom:24px">
         <input type="checkbox" id="consent" name="consent" required style="width:18px;height:18px;margin-top:3px;flex:0 0 18px">
         <label for="consent" style="font-family:var(--text);font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-2);margin:0">
@@ -175,7 +176,7 @@
         </label>
       </div>
       <button class="btn" type="submit">Отправить</button>
-      <p class="hint">Отвечаю в течение дня. Данные никому не передаю.</p>
+      <p class="hint" id="lead-hint">Отвечаю в течение дня. Данные никому не передаю.</p>
     </form>
     <div id="thanks" style="display:none">
       <h3>Спасибо, получил</h3>
@@ -240,8 +241,11 @@ document.querySelector('.burger').addEventListener('click',function(){
 })();
 document.getElementById('lead-form').addEventListener('submit',function(e){
   e.preventDefault();
-  this.style.display='none';
-  document.getElementById('thanks').style.display='block';
+  var form=this, btn=form.querySelector('button'), hint=document.getElementById('lead-hint');
+  btn.disabled=true; btn.textContent='Отправляю...';
+  fetch('https://telegram-transcriber-bot-production.up.railway.app/lead',{method:'POST',body:new URLSearchParams(new FormData(form))})
+    .then(function(r){ if(!r.ok) throw 0; form.style.display='none'; document.getElementById('thanks').style.display='block'; })
+    .catch(function(){ btn.disabled=false; btn.textContent='Отправить'; hint.textContent='Не получилось отправить. Попробуйте ещё раз или напишите мне в Telegram.'; });
 });
 
 (function(){
