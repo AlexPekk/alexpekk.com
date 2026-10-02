@@ -1,0 +1,35 @@
+name: Цены в витрине
+
+on:
+  schedule:
+    - cron: "40 6 * * *"   # 10:40 по Батуми
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Обновить цены
+        env:
+          GOOGLE_KEY_JSON: ${{ secrets.GOOGLE_KEY_JSON }}
+        run: python .github/scripts/update_prices.py
+      - name: Выложить
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet index.html; then echo "без изменений"; exit 0; fi
+          git config user.name "prices-bot"
+          git config user.email "prices-bot@users.noreply.github.com"
+          git commit -m "Цены в витрине на $(date +%d.%m.%Y)" index.html
+          git push
+          curl -s -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/${{ github.repository }}/pages/builds
