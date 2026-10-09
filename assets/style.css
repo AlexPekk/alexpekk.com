@@ -152,6 +152,7 @@ th{font-family:var(--ui);font-size:11px;font-weight:600;letter-spacing:.16em;tex
 .band h2{color:#fff}
 .band p{color:rgba(255,255,255,.7);margin:16px auto 0;max-width:46ch}
 .band .btn-row{justify-content:center}
+.band > .btn,.band .btn-row{margin-top:36px}
 
 /* ——— подвал ——— */
 footer{background:var(--night);color:rgba(255,255,255,.6);padding-block:64px 44px;font-size:15px}
