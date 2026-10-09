@@ -425,6 +425,7 @@ footer a:hover::after,.nav a:hover::after{right:0}
         <textarea id="note" name="note" rows="3" placeholder="вид на море, рядом школа, тихий район"></textarea>
       </div>
       <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <input type="hidden" name="t" value="">
       <div class="field" style="display:flex;gap:12px;align-items:flex-start;margin-bottom:24px">
         <input type="checkbox" id="consent" name="consent" required style="width:18px;height:18px;margin-top:3px;flex:0 0 18px">
         <label for="consent" style="font-family:var(--text);font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink-2);margin:0">
@@ -506,7 +507,7 @@ document.querySelector('.burger').addEventListener('click',function(){
 document.getElementById('lead-form').addEventListener('submit',function(e){
   e.preventDefault();
   var form=this, btn=form.querySelector('button'), hint=document.getElementById('lead-hint');
-  btn.disabled=true; btn.textContent='Отправляю...';
+  btn.disabled=true; btn.textContent='Отправляю...'; form.elements.t.value=Math.round(performance.now());
   fetch('https://telegram-transcriber-bot-production.up.railway.app/lead',{method:'POST',body:new URLSearchParams(new FormData(form))})
     .then(function(r){ if(!r.ok) throw 0; form.style.display='none'; document.getElementById('thanks').style.display='block'; if(window.ym)ym(113579645,'reachGoal','anketa'); })
     .catch(function(){ btn.disabled=false; btn.textContent='Отправить'; hint.textContent='Не получилось отправить. Попробуйте ещё раз или напишите мне в Telegram.'; });
