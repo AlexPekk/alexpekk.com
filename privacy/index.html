@@ -22,6 +22,19 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png?v=2">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113579645', 'ym');
+
+    ym(113579645, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113579645" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
 <body class="light">
 
@@ -41,7 +54,7 @@
 
 <div class="wrap article">
   <h1>Политика обработки персональных данных</h1>
-  <p class="meta">Обновлено 28 сентября 2026</p>
+  <p class="meta">Обновлено 9 октября 2026</p>
 
   <p>Здесь описано, какие данные собирает сайт alexpekk.com, зачем они нужны и что с ними происходит дальше.</p>
 
@@ -74,7 +87,7 @@
   <p>Напишите в Telegram или ответьте на любое моё сообщение словами «удалите мои данные». Удалю в течение трёх рабочих дней и подтвержу.</p>
 
   <h2>Файлы cookie</h2>
-  <p>Сайт статический, рекламных и отслеживающих cookie не ставит. Если появится счётчик посещений, здесь будет об этом написано.</p>
+  <p>На сайте работает счётчик Яндекс Метрика. Он ставит cookie и собирает обезличенную статистику: какие страницы открывали, сколько времени на них провели, откуда пришли, с какого устройства, какие кнопки нажимали. Метрика записывает действия на странице, но не сохраняет то, что вы вводите в поля анкеты. По этим данным нельзя установить конкретного человека, они нужны, чтобы делать сайт удобнее. Отключить cookie можно в настройках браузера, сайт будет работать и без них. Подробнее - в <a href="https://yandex.ru/legal/confidential/" target="_blank" rel="noopener">политике конфиденциальности Яндекса</a>.</p>
 </div>
 
 <footer>
@@ -146,6 +159,18 @@ document.querySelector('.burger').addEventListener('click',function(){
   });
   setTimeout(function(){items.forEach(function(el){el.classList.add('seen')});},3500);
 })();
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]'); if(!a||!window.ym)return;
+  var h=a.getAttribute('href'), g=null;
+  if(h.indexOf('t.me/+')>-1)g='tg_channel';
+  else if(h.indexOf('t.me/m/')>-1)g='tg_dm';
+  else if(h.indexOf('Guide_by_Pekker_bot')>-1)g='guide';
+  else if(h.indexOf('wa.me/')>-1)g='whatsapp';
+  else if(h.indexOf('/podbor/#anketa')>-1)g='to_anketa';
+  if(g)ym(113579645,'reachGoal',g);
+});
 </script>
 </body>
 </html>
