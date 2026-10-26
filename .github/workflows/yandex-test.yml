@@ -1,0 +1,8 @@
+name: yandex-test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -s -m 20 -o /dev/null -w "webmaster api: %{http_code}\n" https://api.webmaster.yandex.net/v4/user || echo "webmaster api: no connection"
