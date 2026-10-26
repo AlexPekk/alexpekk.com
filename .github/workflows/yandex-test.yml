@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -s -m 20 -o /dev/null -w "webmaster api: %{http_code}\n" https://api.webmaster.yandex.net/v4/user || echo "webmaster api: no connection"
+          curl -s -m 20 -o /dev/null -w "::notice::webmaster api %{http_code}\n" https://api.webmaster.yandex.net/v4/user || echo "::notice::webmaster api no connection"
