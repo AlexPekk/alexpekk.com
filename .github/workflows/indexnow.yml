@@ -1,0 +1,20 @@
+name: indexnow
+# После каждой выкладки сообщает Яндексу и Bing, что страницы сайта обновились.
+# Ключ подтверждения лежит в корне сайта: 1c06955928b80b3cdb66c11aa4581bbe.txt
+on:
+  push:
+    branches: [main]
+    paths: ['**.html', 'sitemap.xml']
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sleep 120  # ждём, пока GitHub Pages выложит новую версию
+      - run: |
+          urls=$(grep -o '<loc>[^<]*' sitemap.xml | sed 's/<loc>//' | python3 -c 'import sys,json;print(json.dumps([l.strip() for l in sys.stdin if l.strip()]))')
+          body="{\"host\":\"alexpekk.com\",\"key\":\"1c06955928b80b3cdb66c11aa4581bbe\",\"keyLocation\":\"https://alexpekk.com/1c06955928b80b3cdb66c11aa4581bbe.txt\",\"urlList\":$urls}"
+          for api in https://yandex.com/indexnow https://api.indexnow.org/indexnow; do
+            code=$(curl -s -m 30 -o /dev/null -w '%{http_code}' -H 'Content-Type: application/json; charset=utf-8' -d "$body" $api || echo 000)
+            echo "::notice::$api $code"
+          done
