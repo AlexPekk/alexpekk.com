@@ -261,6 +261,16 @@ footer a:hover::after,.nav a:hover::after{right:0}
   .photo-band[style*="stroyka-3"]{background-position-x:91%}
   .photo-band[style*="stroyka-2"],.photo-band[style*="ph-rayony"]{background-position-x:100%}
 }
+/* Видео с YouTube: сначала только обложка, плеер грузится по нажатию */
+.video{margin:8px 0 40px}
+.video .yt,.video iframe{display:block;position:relative;width:100%;aspect-ratio:16/9;border:0;background:var(--night);overflow:hidden}
+.video .yt img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.video .yt:hover img{transform:scale(1.03)}
+.video .yt-play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;
+  background:rgba(11,12,13,.72);border:1px solid var(--brass)}
+.video .yt-play::after{content:"";position:absolute;left:31px;top:24px;border-style:solid;border-width:14px 0 14px 22px;
+  border-color:transparent transparent transparent var(--brass)}
+.video figcaption{margin-top:12px;font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png?v=2">
@@ -277,7 +287,7 @@ footer a:hover::after,.nav a:hover::after{right:0}
 <noscript><div><img src="https://mc.yandex.ru/watch/113579645" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://alexpekk.com/"}, {"@type": "ListItem", "position": 2, "name": "Тбилиси", "item": "https://alexpekk.com/tbilisi/"}]}, {"@type": "Article", "headline": "Купить квартиру в Тбилиси: новостройки, районы и условия", "description": "Квартиры в новостройках Тбилиси от застройщиков: Ваке, Сабуртало, Ортачала, Авлабари, Лиси. Цена метра от 1 250 долларов, беспроцентная рассрочка до 48 месяцев, сделка онлайн.", "inLanguage": "ru", "mainEntityOfPage": "https://alexpekk.com/tbilisi/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "dateModified": "2026-10-26", "author": {"@type": "Person", "@id": "https://alexpekk.com/#alex", "name": "Александр Пеккер", "url": "https://alexpekk.com/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "jobTitle": "Брокер по новостройкам Батуми", "sameAs": ["https://www.youtube.com/@AlexPekk", "https://www.instagram.com/alexpekk/"]}, "publisher": {"@id": "https://alexpekk.com/#alex"}}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://alexpekk.com/"}, {"@type": "ListItem", "position": 2, "name": "Тбилиси", "item": "https://alexpekk.com/tbilisi/"}]}, {"@type": "Article", "headline": "Купить квартиру в Тбилиси: новостройки, районы и условия", "description": "Квартиры в новостройках Тбилиси от застройщиков: Ваке, Сабуртало, Ортачала, Авлабари, Лиси. Цена метра от 1 250 долларов, беспроцентная рассрочка до 48 месяцев, сделка онлайн.", "inLanguage": "ru", "mainEntityOfPage": "https://alexpekk.com/tbilisi/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "dateModified": "2026-10-26", "author": {"@type": "Person", "@id": "https://alexpekk.com/#alex", "name": "Александр Пеккер", "url": "https://alexpekk.com/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "jobTitle": "Брокер по новостройкам Батуми", "sameAs": ["https://www.youtube.com/@AlexPekk", "https://www.instagram.com/alexpekk/"]}, "publisher": {"@id": "https://alexpekk.com/#alex"}}, {"@type": "VideoObject", "name": "Лист ожидания на АРЕНДУ: комплекс в Тбилиси, где квартиры сдаёт застройщик", "description": "комплекс в Тбилиси, где квартиры сдаёт застройщик", "thumbnailUrl": "https://alexpekk.com/assets/video/29eZRX7r4m4.webp", "uploadDate": "2026-10-05", "duration": "PT6M47S", "embedUrl": "https://www.youtube-nocookie.com/embed/29eZRX7r4m4", "contentUrl": "https://www.youtube.com/watch?v=29eZRX7r4m4"}]}
 </script>
 </head>
 <body class="light">
@@ -303,7 +313,12 @@ footer a:hover::after,.nav a:hover::after{right:0}
   <p>Тбилиси - столица и самый большой город Грузии. Здесь круглый год есть работа, школы, университеты и врачи, поэтому квартиры покупают и для жизни, и под долгосрочную аренду с ровным спросом весь год.</p>
   <p>Основная моя работа - Батуми, но в Тбилиси я тоже работаю напрямую с застройщиками. Стартовая цена метра в новостройках Тбилиси - от 1 250 до 5 750 долларов.</p>
 
-  <h2>Ваке</h2>
+    <figure class="video">
+    <a class="yt" href="https://www.youtube.com/watch?v=29eZRX7r4m4" data-id="29eZRX7r4m4" target="_blank" rel="noopener" aria-label="Смотреть видео"><img src="/assets/video/29eZRX7r4m4.webp" alt="Лист ожидания на АРЕНДУ: комплекс в Тбилиси, где квартиры сдаёт застройщик" width="960" height="540" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></a>
+    <figcaption>Видео: комплекс в Тбилиси, где квартиры сдаёт застройщик</figcaption>
+  </figure>
+
+<h2>Ваке</h2>
   <p>Один из самых престижных районов столицы. Здесь живут обеспеченные семьи, экспаты и те, кто хочет жить в зелёном центре. Главная улица - проспект Чавчавадзе с кафе, магазинами и салонами, рядом главный корпус Тбилисского университета. В районе большой Ваке-парк, откуда канатная дорога поднимается к Черепашьему озеру. Хорошие школы и детские сады.</p>
   <ul>
     <li>Кому: для себя, если важны статус района, парки и сервис рядом с домом</li>
@@ -444,6 +459,16 @@ document.addEventListener('click',function(e){
   else if(h.indexOf('wa.me/')>-1)g='whatsapp';
   else if(h.indexOf('/podbor/#anketa')>-1)g='to_anketa';
   if(g)ym(113579645,'reachGoal',g);
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a.yt'); if(!a||e.metaKey||e.ctrlKey)return;
+  e.preventDefault();
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1&rel=0';
+  f.title=a.querySelector('img').alt; f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  a.replaceWith(f); if(window.ym)ym(113579645,'reachGoal','video');
 });
 </script>
 </body>

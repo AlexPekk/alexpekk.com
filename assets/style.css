@@ -240,3 +240,13 @@ footer a:hover::after,.nav a:hover::after{right:0}
   .photo-band[style*="stroyka-3"]{background-position-x:91%}
   .photo-band[style*="stroyka-2"],.photo-band[style*="ph-rayony"]{background-position-x:100%}
 }
+/* Видео с YouTube: сначала только обложка, плеер грузится по нажатию */
+.video{margin:8px 0 40px}
+.video .yt,.video iframe{display:block;position:relative;width:100%;aspect-ratio:16/9;border:0;background:var(--night);overflow:hidden}
+.video .yt img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.video .yt:hover img{transform:scale(1.03)}
+.video .yt-play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;
+  background:rgba(11,12,13,.72);border:1px solid var(--brass)}
+.video .yt-play::after{content:"";position:absolute;left:31px;top:24px;border-style:solid;border-width:14px 0 14px 22px;
+  border-color:transparent transparent transparent var(--brass)}
+.video figcaption{margin-top:12px;font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}

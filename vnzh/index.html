@@ -261,6 +261,16 @@ footer a:hover::after,.nav a:hover::after{right:0}
   .photo-band[style*="stroyka-3"]{background-position-x:91%}
   .photo-band[style*="stroyka-2"],.photo-band[style*="ph-rayony"]{background-position-x:100%}
 }
+/* Видео с YouTube: сначала только обложка, плеер грузится по нажатию */
+.video{margin:8px 0 40px}
+.video .yt,.video iframe{display:block;position:relative;width:100%;aspect-ratio:16/9;border:0;background:var(--night);overflow:hidden}
+.video .yt img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
+.video .yt:hover img{transform:scale(1.03)}
+.video .yt-play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;
+  background:rgba(11,12,13,.72);border:1px solid var(--brass)}
+.video .yt-play::after{content:"";position:absolute;left:31px;top:24px;border-style:solid;border-width:14px 0 14px 22px;
+  border-color:transparent transparent transparent var(--brass)}
+.video figcaption{margin-top:12px;font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png?v=2">
@@ -277,7 +287,7 @@ footer a:hover::after,.nav a:hover::after{right:0}
 <noscript><div><img src="https://mc.yandex.ru/watch/113579645" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://alexpekk.com/"}, {"@type": "ListItem", "position": 2, "name": "ВНЖ Грузии", "item": "https://alexpekk.com/vnzh/"}]}, {"@type": "Article", "headline": "ВНЖ Грузии через недвижимость: что изменилось в 2026 году", "description": "Сколько нужно вложить в недвижимость для ВНЖ Грузии в 2026 году, почему кадастровая оценка важнее цены покупки и кому вид на жительство вообще не нужен.", "inLanguage": "ru", "mainEntityOfPage": "https://alexpekk.com/vnzh/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "dateModified": "2026-10-26", "author": {"@type": "Person", "@id": "https://alexpekk.com/#alex", "name": "Александр Пеккер", "url": "https://alexpekk.com/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "jobTitle": "Брокер по новостройкам Батуми", "sameAs": ["https://www.youtube.com/@AlexPekk", "https://www.instagram.com/alexpekk/"]}, "publisher": {"@id": "https://alexpekk.com/#alex"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Даёт ли ВНЖ гражданство?", "acceptedAnswer": {"@type": "Answer", "text": "Напрямую нет. После 6 лет с обычным ВНЖ можно подать на постоянный вид на жительство, с инвестиционным - через 5 лет. Гражданство Грузии даётся через натурализацию: нужно 10 лет законного проживания и экзамены по грузинскому языку, истории и основам права."}}, {"@type": "Question", "name": "Получат ли ВНЖ жена и дети?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Супруг и дети до 18 лет получают ВНЖ по воссоединению семьи. Инвестиционный ВНЖ сразу распространяется на супруга и детей до 18 лет."}}, {"@type": "Question", "name": "Что будет, если продать квартиру?", "acceptedAnswer": {"@type": "Answer", "text": "Основание для ВНЖ исчезает. При следующем продлении статус не сохранится, если нет другого основания."}}, {"@type": "Question", "name": "Можно ли оформить ВНЖ удалённо?", "acceptedAnswer": {"@type": "Answer", "text": "Договор с застройщиком заключается удалённо. Для регистрации в Доме юстиции нужна доверенность или личное присутствие. Первую подачу на ВНЖ делают, находясь в Грузии."}}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://alexpekk.com/"}, {"@type": "ListItem", "position": 2, "name": "ВНЖ Грузии", "item": "https://alexpekk.com/vnzh/"}]}, {"@type": "Article", "headline": "ВНЖ Грузии через недвижимость: что изменилось в 2026 году", "description": "Сколько нужно вложить в недвижимость для ВНЖ Грузии в 2026 году, почему кадастровая оценка важнее цены покупки и кому вид на жительство вообще не нужен.", "inLanguage": "ru", "mainEntityOfPage": "https://alexpekk.com/vnzh/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "dateModified": "2026-10-26", "author": {"@type": "Person", "@id": "https://alexpekk.com/#alex", "name": "Александр Пеккер", "url": "https://alexpekk.com/", "image": "https://alexpekk.com/assets/alex-portrait.jpg", "jobTitle": "Брокер по новостройкам Батуми", "sameAs": ["https://www.youtube.com/@AlexPekk", "https://www.instagram.com/alexpekk/"]}, "publisher": {"@id": "https://alexpekk.com/#alex"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Даёт ли ВНЖ гражданство?", "acceptedAnswer": {"@type": "Answer", "text": "Напрямую нет. После 6 лет с обычным ВНЖ можно подать на постоянный вид на жительство, с инвестиционным - через 5 лет. Гражданство Грузии даётся через натурализацию: нужно 10 лет законного проживания и экзамены по грузинскому языку, истории и основам права."}}, {"@type": "Question", "name": "Получат ли ВНЖ жена и дети?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Супруг и дети до 18 лет получают ВНЖ по воссоединению семьи. Инвестиционный ВНЖ сразу распространяется на супруга и детей до 18 лет."}}, {"@type": "Question", "name": "Что будет, если продать квартиру?", "acceptedAnswer": {"@type": "Answer", "text": "Основание для ВНЖ исчезает. При следующем продлении статус не сохранится, если нет другого основания."}}, {"@type": "Question", "name": "Можно ли оформить ВНЖ удалённо?", "acceptedAnswer": {"@type": "Answer", "text": "Договор с застройщиком заключается удалённо. Для регистрации в Доме юстиции нужна доверенность или личное присутствие. Первую подачу на ВНЖ делают, находясь в Грузии."}}]}, {"@type": "VideoObject", "name": "Почему люди переезжают в Грузию? ВСЯ ПРАВДА для тех, кто хочет переехать (ВНЖ, Налоги)", "description": "что поменялось с ВНЖ и переездом в Грузию, разбор с юристом Анной Давидсон", "thumbnailUrl": "https://alexpekk.com/assets/video/hTByqQXLmB4.webp", "uploadDate": "2026-05-26", "duration": "PT45M17S", "embedUrl": "https://www.youtube-nocookie.com/embed/hTByqQXLmB4", "contentUrl": "https://www.youtube.com/watch?v=hTByqQXLmB4"}]}
 </script>
 </head>
 <body class="light">
@@ -306,7 +316,12 @@ footer a:hover::after,.nav a:hover::after{right:0}
     <p><b>Коротко.</b> Сейчас порог для ВНЖ через недвижимость - 150 000 долларов. До 1 марта 2026 года он был 100 000. ВНЖ даётся на год. Отдельно есть инвестиционный ВНЖ - на 5 лет, от 300 000 долларов.</p>
   </div>
 
-  <h2>Считается оценка, а не цена в договоре</h2>
+    <figure class="video">
+    <a class="yt" href="https://www.youtube.com/watch?v=hTByqQXLmB4" data-id="hTByqQXLmB4" target="_blank" rel="noopener" aria-label="Смотреть видео"><img src="/assets/video/hTByqQXLmB4.webp" alt="Почему люди переезжают в Грузию? ВСЯ ПРАВДА для тех, кто хочет переехать (ВНЖ, Налоги)" width="960" height="540" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></a>
+    <figcaption>Видео: что поменялось с ВНЖ и переездом в Грузию, разбор с юристом Анной Давидсон</figcaption>
+  </figure>
+
+<h2>Считается оценка, а не цена в договоре</h2>
   <p>Для ВНЖ считается не та сумма, которую вы заплатили, а оценочная стоимость объекта. По моему опыту, для оформления ВНЖ квартиру оценивают на 20-30% выше рыночной цены.</p>
 
   <h2>Кому ВНЖ вообще не нужен</h2>
@@ -453,6 +468,16 @@ document.addEventListener('click',function(e){
   else if(h.indexOf('wa.me/')>-1)g='whatsapp';
   else if(h.indexOf('/podbor/#anketa')>-1)g='to_anketa';
   if(g)ym(113579645,'reachGoal',g);
+});
+</script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a.yt'); if(!a||e.metaKey||e.ctrlKey)return;
+  e.preventDefault();
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1&rel=0';
+  f.title=a.querySelector('img').alt; f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
+  a.replaceWith(f); if(window.ym)ym(113579645,'reachGoal','video');
 });
 </script>
 </body>
