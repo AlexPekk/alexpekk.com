@@ -261,16 +261,23 @@ footer a:hover::after,.nav a:hover::after{right:0}
   .photo-band[style*="stroyka-3"]{background-position-x:91%}
   .photo-band[style*="stroyka-2"],.photo-band[style*="ph-rayony"]{background-position-x:100%}
 }
-/* Видео с YouTube: сначала только обложка, плеер грузится по нажатию */
-.video{margin:8px 0 40px}
-.video .yt,.video iframe{display:block;position:relative;width:100%;aspect-ratio:16/9;border:0;background:var(--night);overflow:hidden}
-.video .yt img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1)}
-.video .yt:hover img{transform:scale(1.03)}
-.video .yt-play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;
+/* Видео по теме: компактный блок перед анкетой, плеер грузится по нажатию */
+.article .video-jump{margin-top:-4px;font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.video-jump a{color:#6b6b68;text-decoration:none;border-bottom:1px solid var(--line)}
+.video-jump a:hover{color:var(--ink);border-color:var(--brass)}
+.video-mini{display:grid;grid-template-columns:240px 1fr;gap:16px 24px;align-items:center;margin:48px 0 0;padding-top:28px;border-top:1px solid var(--line)}
+.article .video-mini-label{grid-column:1/-1;margin:0;font-family:var(--ui);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6b6b68}
+.video-mini .yt,.video-mini iframe{display:block;position:relative;width:100%;aspect-ratio:16/9;border:0;background:var(--night);overflow:hidden}
+.video-mini .yt img{width:100%;height:100%;object-fit:cover;filter:saturate(.75);transition:filter .4s,transform .8s cubic-bezier(.22,.61,.36,1)}
+.video-mini .yt:hover img{filter:none;transform:scale(1.03)}
+.video-mini .yt-play{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;
   background:rgba(11,12,13,.72);border:1px solid var(--brass)}
-.video .yt-play::after{content:"";position:absolute;left:31px;top:24px;border-style:solid;border-width:14px 0 14px 22px;
+.video-mini .yt-play::after{content:"";position:absolute;left:18px;top:14px;border-style:solid;border-width:9px 0 9px 14px;
   border-color:transparent transparent transparent var(--brass)}
-.video figcaption{margin-top:12px;font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}
+.article .video-mini-text p{margin:0 0 6px;font-size:17px;line-height:1.4}
+.video-mini-text span{font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}
+.video-mini.playing{grid-template-columns:1fr}
+@media(max-width:700px){.video-mini{grid-template-columns:132px 1fr;gap:12px 16px}.article .video-mini-text p{font-size:15px}}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png?v=2">
@@ -310,11 +317,8 @@ footer a:hover::after,.nav a:hover::after{right:0}
 <div class="wrap article">
   <h1>Районы Батуми: где покупать под жизнь, аренду и рост</h1>
   <p>Батуми маленький: из конца в конец двадцать минут на машине. Но разница между районами в деньгах огромная. В моей базе по Батуми больше 230 проектов, и стартовая цена метра в них идёт от 800 до 18 000 долларов. Разберу, за что именно доплачивают.</p>
+  <p class="video-jump"><a href="#video">Есть видеоразбор этой темы ↓</a></p>
 
-    <figure class="video">
-    <a class="yt" href="https://www.youtube.com/watch?v=RkxaCsMGfUc" data-id="RkxaCsMGfUc" target="_blank" rel="noopener" aria-label="Смотреть видео"><img src="/assets/video/RkxaCsMGfUc.webp" alt="Недвижимость Батуми от А до Я: районы, цены, ошибки, ВНЖ!" width="960" height="540" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></a>
-    <figcaption>Видео: недвижимость Батуми от А до Я - районы, цены, ошибки</figcaption>
-  </figure>
 
 <h2>Новый бульвар</h2>
   <p>Здесь строится новый Батуми: современные дома, и многие экспаты селятся именно тут. Широкая набережная, большой парк с прогулочными зонами, большая детская площадка прямо у моря и отличный скейтпарк.</p>
@@ -406,6 +410,12 @@ footer a:hover::after,.nav a:hover::after{right:0}
     <li><a href="/pereezd/">Переезд в Батуми: что проверить до покупки</a></li>
     <li><a href="/nalogi/">Налоги владельца квартиры в Грузии</a></li>
   </ul>
+
+  <div class="video-mini" id="video">
+    <p class="video-mini-label">Видео по теме</p>
+    <a class="yt" href="https://www.youtube.com/watch?v=RkxaCsMGfUc" data-id="RkxaCsMGfUc" target="_blank" rel="noopener" aria-label="Смотреть видео"><img src="/assets/video/RkxaCsMGfUc.webp" alt="Недвижимость Батуми от А до Я: районы, цены, ошибки, ВНЖ!" width="960" height="540" loading="lazy" decoding="async"><span class="yt-play" aria-hidden="true"></span></a>
+    <div class="video-mini-text"><p>Недвижимость Батуми от А до Я - районы, цены, ошибки</p><span>YouTube · 22 мин</span></div>
+  </div>
 
   <div class="band" style="margin-top:56px">
     <h2>Не знаете, какой район ваш?</h2>
@@ -503,6 +513,7 @@ document.addEventListener('click',function(e){
 document.addEventListener('click',function(e){
   var a=e.target.closest&&e.target.closest('a.yt'); if(!a||e.metaKey||e.ctrlKey)return;
   e.preventDefault();
+  var box=a.closest('.video-mini'); if(box)box.classList.add('playing');
   var f=document.createElement('iframe');
   f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.id+'?autoplay=1&rel=0';
   f.title=a.querySelector('img').alt; f.allow='autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen=true;
