@@ -65,14 +65,27 @@ def prices(row):
     return None
 
 
+def last_prices():
+    """Цены, которые сейчас стоят в витрине: {название: (цена от, подпись)}."""
+    s = open(PAGE, encoding="utf-8").read()
+    return {m[1]: (int(m[3].replace(" ", "")), m[2]) for m in re.finditer(
+        r'<span class="name">([^<]+)</span><span class="price">(\$([\d ]+)[^<]*?) <small>', s)}
+
+
 def main():
     sheet = read_sheet()
+    old = last_prices()
     lots = []
     for area, name, keys, year, show_range in LOTS:
         found = [p for p in (prices(sheet[k]) for k in keys if k in sheet) if p]
         if not found:
-            log(f"нет цены для {name} - витрину не трогаю")
-            return 1
+            if name not in old:
+                log(f"нет цены для {name} и прошлой на сайте нет - витрину не трогаю")
+                return 1
+            # шахматку застройщика сломали - держим вчерашнюю цену, остальные обновляем
+            log(f"нет цены для {name} - оставляю прошлую {old[name][1]}")
+            lots.append((old[name][0], area, name, old[name][1], year))
+            continue
         lo, hi = min(p[0] for p in found), max(p[1] for p in found)
         label = f"${money(lo)} - {money(hi)}" if show_range and hi > lo else f"${money(lo)}"
         lots.append((lo, area, name, label, year))
