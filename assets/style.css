@@ -257,3 +257,10 @@ footer a:hover::after,.nav a:hover::after{right:0}
 .video-mini-text span{font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}
 .video-mini.playing{grid-template-columns:1fr}
 @media(max-width:700px){.video-mini{grid-template-columns:132px 1fr;gap:12px 16px}.article .video-mini-text p{font-size:15px}}
+
+/* Короткие пункты вместо длинного абзаца (08.11.2026) */
+.points{list-style:none;padding:0;margin:18px 0 0;max-width:62ch}
+.points li{position:relative;padding:9px 0 9px 22px;line-height:1.6}
+.points li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:1px;background:var(--brass)}
+.photo-band .points{max-width:46ch}
+.photo-band .points li{color:rgba(255,255,255,.75)}

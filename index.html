@@ -282,6 +282,13 @@ footer a:hover::after,.nav a:hover::after{right:0}
 .video-mini-text span{font-family:var(--ui);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#6b6b68}
 .video-mini.playing{grid-template-columns:1fr}
 @media(max-width:700px){.video-mini{grid-template-columns:132px 1fr;gap:12px 16px}.article .video-mini-text p{font-size:15px}}
+
+/* Короткие пункты вместо длинного абзаца (08.11.2026) */
+.points{list-style:none;padding:0;margin:18px 0 0;max-width:62ch}
+.points li{position:relative;padding:9px 0 9px 22px;line-height:1.6}
+.points li::before{content:"";position:absolute;left:0;top:21px;width:10px;height:1px;background:var(--brass)}
+.photo-band .points{max-width:46ch}
+.photo-band .points li{color:rgba(255,255,255,.75)}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=2">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icon-512.png?v=2">
@@ -359,7 +366,12 @@ footer a:hover::after,.nav a:hover::after{right:0}
 <section class="photo-band" style="background-image:url('/assets/stroyka-1.jpg?v=3');background-image:image-set(url('/assets/stroyka-1.webp?v=3') type('image/webp'),url('/assets/stroyka-1.jpg?v=3') type('image/jpeg'))">
   <div class="wrap">
     <h2>Смотрю объекты сам</h2>
-    <p>Захожу на этаж, проверяю вид из окна и то, что реально построено на площадке. Смотрю, удобно ли там жить круглый год: магазины, школы и транспорт рядом. Проверяю, подойдет ли такая квартира для длительной аренды или сможет работать только в сезон. Считаю доходность по реальному рынку, а не по финмодели застройщика.</p>
+    <ul class="points">
+      <li>Захожу на этаж, проверяю вид из окна и то, что реально построено на площадке</li>
+      <li>Смотрю, удобно ли там жить круглый год: магазины, школы и транспорт рядом</li>
+      <li>Проверяю, подойдет ли такая квартира для длительной аренды или сможет работать только в сезон</li>
+      <li>Считаю доходность по реальному рынку, а не по финмодели застройщика</li>
+    </ul>
     <div class="btn-row"><a class="btn btn-ghost" href="/rayony/">Разбор районов</a></div>
   </div>
 </section>
@@ -370,8 +382,13 @@ footer a:hover::after,.nav a:hover::after{right:0}
     <div>
       <span class="kicker" style="color:var(--brass)">Обо мне</span>
       <h2 style="margin-top:18px">Почему со мной проще</h2>
-      <p style="margin-top:22px">Я не агентство с колл-центром. Смотрю объекты сам, знаю, у кого сдвигаются сроки, где дешевле метр за счёт этажа и вида, а где на рендере красиво, а дом потом плохо обслуживают.</p>
-      <p>Комиссию мне платит застройщик, поэтому цена для вас та же, что в отделе продаж. А работаю я на вашей стороне: выбиваю лучшие условия по рассрочке и скидкам, проверяю договор и добиваюсь правок в пользу покупателя. Вариант плохой - скажу прямо, подбираю только объекты, которые купил бы сам.</p>
+      <p style="margin-top:22px">Я не агентство с колл-центром.</p>
+      <ul class="points">
+        <li>Смотрю объекты сам, знаю, у кого сдвигаются сроки, где дешевле метр за счёт этажа и вида, а где на рендере красиво, а дом потом плохо обслуживают</li>
+        <li>Комиссию мне платит застройщик, поэтому цена для вас та же, что в отделе продаж</li>
+        <li>Работаю на вашей стороне: выбиваю лучшие условия по рассрочке и скидкам, проверяю договор и добиваюсь правок в пользу покупателя</li>
+        <li>Вариант плохой - скажу прямо, подбираю только объекты, которые купил бы сам</li>
+      </ul>
       <div class="btn-row"><a class="btn" href="/podbor/">Как проходит работа</a></div>
     </div>
   </div>
@@ -380,7 +397,7 @@ footer a:hover::after,.nav a:hover::after{right:0}
 <section class="dark-sec">
   <div class="wrap">
     <div class="sec-head"><h2>Как проходит работа</h2>
-      <p class="sub-text">Первый разговор ни к чему не обязывает. Дальше - по вашей задаче и срокам.</p></div>
+      <p class="sub-text">Разговор, подборка, показ объектов и проверка договора бесплатны и ни к чему не обязывают. Обязательства появляются только тогда, когда вы подписываете договор с застройщиком.</p></div>
     <div class="steps">
       <div class="step"><div><h3>Разбираемся в задаче</h3><p>Бюджет, срок, для чего покупаете: жить, сдавать или перепродать на этапе стройки.</p></div></div>
       <div class="step"><div><h3>Присылаю подборку</h3><p>Пять-семь вариантов с ценой за метр, сроками, рассрочкой и комментарием, что не так в каждом.</p></div></div>
