@@ -196,8 +196,8 @@ footer{background:var(--night);color:#8b9096;font-size:13px;padding:28px 0 36px}
 .fb .btn-tg{border-color:var(--ink);color:var(--ink)}.fb .btn-tg:hover{background:var(--ink);color:#fff}
 .me{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;align-items:center;margin-top:32px}
 .me img{width:120px;height:120px;object-fit:cover;border-radius:50%}
-.ck{position:fixed;z-index:31;left:12px;right:12px;bottom:12px;max-width:560px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between;background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 8px 30px rgba(0,0,0,.18);padding:12px 14px;font-size:13px;line-height:1.4}.ck[hidden]{display:none}.ck p{margin:0}.ck a{color:var(--brass-d)}.ck div{display:flex;gap:6px;flex:none}.ck button{font:600 12px var(--ui);letter-spacing:.06em;padding:9px 12px;border:1px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer}.ck #ck-no{background:transparent;color:var(--ink)}
-@media (max-width:640px){.ck{bottom:84px}}
+.ck{position:fixed;z-index:40;left:0;right:0;bottom:0;background:#fff;color:var(--ink);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(0,0,0,.12);padding:14px 16px calc(14px + env(safe-area-inset-bottom))}.ck[hidden],.ck [hidden]{display:none}.ck-in{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px}.ck-t{margin:0;flex:1 1 360px;font-size:14px;line-height:1.45}.ck-t a{color:var(--ink);text-decoration:underline}.ck-set{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px}.ck-set label{display:flex;align-items:center;gap:8px}.ck-set span{color:var(--ink-2);font-size:12px}.ck-set input{width:18px;height:18px;accent-color:var(--ink)}.ck-b{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ck-b button{font:600 13px/1 var(--ui);letter-spacing:.02em;padding:13px 20px;border:1px solid var(--ink);cursor:pointer;border-radius:2px}.ck-all{background:var(--ink);color:#fff}.ck-min{background:#fff;color:var(--ink)}.ck-cfg{background:none;border-color:transparent!important;color:var(--ink-2);text-decoration:underline;padding:13px 6px!important}
+@media (max-width:640px){.ck{padding:12px 12px calc(12px + env(safe-area-inset-bottom))}.ck-t{font-size:13px;flex-basis:100%}.ck-b{width:100%}.ck-all,.ck-min{flex:1 1 0;padding:13px 8px!important}.ck-cfg{flex-basis:100%;text-align:center;padding:4px!important}}
 .float{position:fixed;z-index:30;left:0;right:0;bottom:0;display:none;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(11,12,13,.92);backdrop-filter:blur(10px)}
 .float a{flex:1;padding:14px 8px;font-size:11px}
 @media (max-width:900px){.gal{grid-template-columns:1fr 1fr}.gal figure.w{grid-column:span 2}.plans{grid-template-columns:1fr 1fr}}
@@ -304,7 +304,11 @@ window.addEventListener('load',function(){var k=document.createElement('script')
 </main>
 <div class="float"><a class="btn btn-wa" href="https://wa.me/995568559068?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A1%20%D1%81%D0%B0%D0%B9%D1%82%D0%B0%3A%20%D0%BF%D0%B5%D0%BD%D1%82%D1%85%D0%B0%D1%83%D1%81%D1%8B%20Rogantini%20Swiss%20Village%20%23rogantini" target="_blank" rel="noopener">WhatsApp</a><a class="btn btn-tg" href="https://t.me/m/akvO193KNzMy" target="_blank" rel="noopener">Telegram</a></div>
 <footer><div class="wrap">Цены и условия - из прайса застройщика Rogantini на 25.11.2026, наличие меняется. Рендеры и фото - материалы застройщика. © alexpekk.com</div></footer>
-<div class="ck" id="ck" hidden><p>Сайт использует cookies Meta (Facebook, Instagram), чтобы показывать рекламу точнее. <a href="/privacy/">Подробнее</a></p><div><button type="button" id="ck-yes">Принять</button><button type="button" id="ck-no">Нет</button></div></div>
+<div class="ck" id="ck" role="dialog" aria-label="Настройки cookies" hidden><div class="ck-in">
+<p class="ck-t">Мы используем cookies, чтобы сайт работал корректно, и для аналитики. <a href="/privacy/">Подробнее</a></p>
+<div class="ck-set" id="ck-set" hidden><label><input type="checkbox" checked disabled> Необходимые <span>всегда включены</span></label><label><input type="checkbox" id="ck-mkt"> Маркетинг (Meta)</label></div>
+<div class="ck-b"><button type="button" class="ck-all" id="ck-yes">Принять все</button><button type="button" class="ck-min" id="ck-no">Только необходимые</button><button type="button" class="ck-cfg" id="ck-cfg">Настроить</button><button type="button" class="ck-min" id="ck-save" hidden>Сохранить выбор</button></div>
+</div></div>
 <script>
 (function(){var K='ck_meta',box=document.getElementById('ck');
 function load(){if(window.fbq)return;!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1346992353810205');fbq('track','PageView');}
@@ -312,7 +316,9 @@ window.fbt=function(n,p){if(window.fbq)fbq('track',n,p||{})};
 var v=null;try{v=localStorage.getItem(K)}catch(e){}
 if(v==='1')load();else if(v!=='0')box.hidden=false;
 function set(x){try{localStorage.setItem(K,x)}catch(e){}box.hidden=true;if(x==='1')load()}
-document.getElementById('ck-yes').onclick=function(){set('1')};document.getElementById('ck-no').onclick=function(){set('0')};})();
+document.getElementById('ck-yes').onclick=function(){set('1')};document.getElementById('ck-no').onclick=function(){set('0')};
+document.getElementById('ck-cfg').onclick=function(){document.getElementById('ck-set').hidden=false;this.hidden=true;document.getElementById('ck-no').hidden=true;document.getElementById('ck-save').hidden=false};
+document.getElementById('ck-save').onclick=function(){set(document.getElementById('ck-mkt').checked?'1':'0')};})();
 </script>
 <script>
 (function(){var end=new Date('2026-12-01T00:00:00+04:00'),d=Math.ceil((end-new Date())/864e5),el=document.getElementById('days');
