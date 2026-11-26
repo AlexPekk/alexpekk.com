@@ -328,9 +328,10 @@ var w=(d%10==1&&d%100!=11)?'день':(d%10>=2&&d%10<=4&&(d%100<10||d%100>=20))?
 document.querySelector('#vid button').addEventListener('click',function(){var f=document.createElement('iframe');
 f.src='https://www.youtube.com/embed/6p0osSNwMeE?autoplay=1&rel=0&playsinline=1';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title='Фильм о Rogantini Swiss Village';
 this.replaceWith(f);if(window.ym)ym(113579645,'reachGoal','rog_film');fbt('ViewContent',{content_name:'film'});});
+(function(){var code=null;try{var q=new URLSearchParams(location.search);if((q.get('utm_source')||'').toLowerCase()==='meta'){var c=(q.get('utm_content')||'').toLowerCase();code=c==='alex'?'R-IL':c==='de'?'R-DE':'R-M';sessionStorage.setItem('rog_src',code)}else code=sessionStorage.getItem('rog_src')}catch(e){}if(!code)return;var t=encodeURIComponent('Здравствуйте! Интересуют пентхаусы Rogantini ('+code+')');[].forEach.call(document.querySelectorAll('a[href*="wa.me/995568559068"]'),function(a){a.href='https://wa.me/995568559068?text='+t});[].forEach.call(document.querySelectorAll('a[href*="t.me/m/akvO193KNzMy"]'),function(a){a.href='https://t.me/AlexPekk?text='+t});})();
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href');var y=window.ym||function(){};
 if(h.indexOf('wa.me/')>-1){y(113579645,'reachGoal','whatsapp',{page:'rogantini'});fbt('Contact',{content_name:'whatsapp'});}
-else if(h.indexOf('t.me/m/')>-1){y(113579645,'reachGoal','tg_dm',{page:'rogantini'});fbt('Contact',{content_name:'telegram'});}
+else if(h.indexOf('t.me/m/')>-1||h.indexOf('t.me/AlexPekk?')>-1){y(113579645,'reachGoal','tg_dm',{page:'rogantini'});fbt('Contact',{content_name:'telegram'});}
 else if(h.indexOf('3d_tour')>-1)y(113579645,'reachGoal','rog_3d');});
 (function(){var links=[].slice.call(document.querySelectorAll('.nav a'));
 function on(){var cur=null;links.forEach(function(a){var s=document.querySelector(a.getAttribute('href'));if(s&&s.getBoundingClientRect().top<120)cur=a});
